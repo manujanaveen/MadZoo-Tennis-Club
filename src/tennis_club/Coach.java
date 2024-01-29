@@ -77,7 +77,7 @@ public class Coach extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        Coach = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         lg = new javax.swing.JLabel();
@@ -105,12 +105,13 @@ public class Coach extends javax.swing.JFrame {
         coacher_table_2 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("Coach");
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Coach.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("Coach");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 180, 50));
+        Coach.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 180, 50));
 
         jButton9.setText("Home");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -118,63 +119,63 @@ public class Coach extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        Coach.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         lg.setBackground(new java.awt.Color(255, 255, 204));
         lg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(lg, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 20, 280, 30));
+        Coach.add(lg, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 20, 280, 30));
 
         jLabel3.setText("Coacher Name");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
+        Coach.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
         jLabel19.setText("NIC");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        Coach.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
         jLabel13.setText("Coacher Address");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        Coach.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         jLabel14.setText("Coacher Contact");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        Coach.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
         jLabel15.setText("Coacher Email");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        Coach.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         jLabel16.setText("Privet Coach price");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+        Coach.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
         cname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cnameActionPerformed(evt);
             }
         });
-        jPanel1.add(cname, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 335, -1));
+        Coach.add(cname, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 335, -1));
 
         cnic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cnicActionPerformed(evt);
             }
         });
-        jPanel1.add(cnic, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 335, -1));
+        Coach.add(cnic, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 335, -1));
 
         caddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caddressActionPerformed(evt);
             }
         });
-        jPanel1.add(caddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 335, -1));
+        Coach.add(caddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 335, -1));
 
         ccontact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ccontactActionPerformed(evt);
             }
         });
-        jPanel1.add(ccontact, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 335, -1));
-        jPanel1.add(cemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 335, -1));
-        jPanel1.add(cprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 335, -1));
+        Coach.add(ccontact, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 335, -1));
+        Coach.add(cemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 335, -1));
+        Coach.add(cprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 335, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel20.setText("Add Coacher");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, 280, 40));
+        Coach.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, 280, 40));
 
         coacher_table_1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -186,7 +187,7 @@ public class Coach extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(coacher_table_1);
 
-        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 1110, 240));
+        Coach.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 1110, 240));
 
         add_to_table_coacher.setText("Add to Table");
         add_to_table_coacher.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +195,7 @@ public class Coach extends javax.swing.JFrame {
                 add_to_table_coacherActionPerformed(evt);
             }
         });
-        jPanel1.add(add_to_table_coacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
+        Coach.add(add_to_table_coacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
 
         clear_coacher.setText("Clear");
         clear_coacher.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +203,7 @@ public class Coach extends javax.swing.JFrame {
                 clear_coacherActionPerformed(evt);
             }
         });
-        jPanel1.add(clear_coacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, -1, -1));
+        Coach.add(clear_coacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, -1, -1));
 
         SAVE_db_coacher.setText("Save to Db");
         SAVE_db_coacher.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +211,7 @@ public class Coach extends javax.swing.JFrame {
                 SAVE_db_coacherActionPerformed(evt);
             }
         });
-        jPanel1.add(SAVE_db_coacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, -1, -1));
+        Coach.add(SAVE_db_coacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, -1, -1));
 
         update_save_coacher.setText("Update & Save");
         update_save_coacher.addActionListener(new java.awt.event.ActionListener() {
@@ -218,7 +219,7 @@ public class Coach extends javax.swing.JFrame {
                 update_save_coacherActionPerformed(evt);
             }
         });
-        jPanel1.add(update_save_coacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, -1, -1));
+        Coach.add(update_save_coacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, -1, -1));
 
         edit_user1.setText("Edit");
         edit_user1.addActionListener(new java.awt.event.ActionListener() {
@@ -226,7 +227,7 @@ public class Coach extends javax.swing.JFrame {
                 edit_user1ActionPerformed(evt);
             }
         });
-        jPanel1.add(edit_user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
+        Coach.add(edit_user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
 
         coacher_table_2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -238,17 +239,20 @@ public class Coach extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(coacher_table_2);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, 1710, 350));
+        Coach.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, 1710, 350));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1820, Short.MAX_VALUE)
+            .addComponent(Coach, javax.swing.GroupLayout.DEFAULT_SIZE, 1820, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 875, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Coach, javax.swing.GroupLayout.DEFAULT_SIZE, 849, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -447,6 +451,7 @@ public class Coach extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Coach;
     private javax.swing.JButton SAVE_db_coacher;
     private javax.swing.JButton add_to_table_coacher;
     private javax.swing.JTextField caddress;
@@ -468,7 +473,6 @@ public class Coach extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel lg;

@@ -4,6 +4,12 @@
  */
 package tennis_club;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ASUS
@@ -15,9 +21,55 @@ public class Reprot extends javax.swing.JFrame {
      */
     public Reprot() {
         initComponents();
-        lg.setText(login.User_Id);
+        lg.setText(login.db_user);
+        getcoachreport();
+        getplayerreport();
+        
     }
+    public static String getcoachreport_id = "";
+    void getcoachreport(){
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) getcoachreport.getModel();
+            dtm.setRowCount(0);
 
+            Statement s = dbcon.dbConnection().createStatement();
+            ResultSet rs = s.executeQuery("SELECT Coach_Id,Coach_name FROM coach");
+             while (rs.next()) {                
+                Vector v = new Vector();
+                String id = rs.getString("Coach_Id");
+                String name = rs.getString("Coach_name");
+                
+                v.add(id);
+                v.add(name);
+                dtm.addRow(v);
+            }      
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    void getplayerreport(){
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) palyerreport.getModel();
+            dtm.setRowCount(0);
+
+            Statement s = dbcon.dbConnection().createStatement();
+            ResultSet rs = s.executeQuery("SELECT Player_Id,Player_Name FROM player");
+             while (rs.next()) {                
+                Vector v = new Vector();
+                String id = rs.getString("Player_Id");
+                String name = rs.getString("Player_Name");
+                
+                v.add(id);
+                v.add(name);
+                dtm.addRow(v);
+            }
+                    
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,8 +83,12 @@ public class Reprot extends javax.swing.JFrame {
         lg = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        palyerreport = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        getcoachreport = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,23 +110,47 @@ public class Reprot extends javax.swing.JFrame {
         });
         jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 730, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton1.setText("Player Report");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 350, 240));
+        palyerreport.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton2.setText("Coach Report");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+            },
+            new String [] {
+                "Player ID", "Name"
+            }
+        ));
+        palyerreport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                palyerreportMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 350, 240));
+        jScrollPane1.setViewportView(palyerreport);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 730, 250));
+
+        getcoachreport.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Coach ID", "Coach name"
+            }
+        ));
+        getcoachreport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                getcoachreportMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(getcoachreport);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 730, 250));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("Player");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("Coach");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,18 +172,28 @@ public class Reprot extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Player_report pr = new Player_report();
-       pr.setVisible(true);
-       this.dispose();
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Coach_report cr = new Coach_report();
-        cr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void getcoachreportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_getcoachreportMouseClicked
+        try {
+            Coach_report chreport = new Coach_report();
+            chreport.setVisible(true);
+            DefaultTableModel dtm = (DefaultTableModel) getcoachreport.getModel();
+            int selectedr = getcoachreport.getSelectedRow();
+            getcoachreport_id = dtm.getValueAt(selectedr, 0).toString();
+            
+           // System.out.println(getcoachreport_id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_getcoachreportMouseClicked
+public static String getplayerreport_id = "";
+    private void palyerreportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_palyerreportMouseClicked
+        Player_report chreport = new Player_report();
+        chreport.setVisible(true);
+        DefaultTableModel dtm = (DefaultTableModel) palyerreport.getModel();
+        int selectedrow = palyerreport.getSelectedRow();
+        getplayerreport_id = dtm.getValueAt(selectedrow,0).toString();
+        
+    }//GEN-LAST:event_palyerreportMouseClicked
 
     /**
      * @param args the command line arguments
@@ -147,11 +237,15 @@ public class Reprot extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JTable getcoachreport;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lg;
+    private javax.swing.JTable palyerreport;
     // End of variables declaration//GEN-END:variables
 }

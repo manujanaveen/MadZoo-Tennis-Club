@@ -22,7 +22,7 @@ public class admin_home extends javax.swing.JFrame {
      */
     public admin_home() {
         initComponents();
-        //load_to_table();
+        load_to_table();
         load_to_table_coacher();
         lg.setText(login.db_user);
     }
@@ -41,7 +41,6 @@ public class admin_home extends javax.swing.JFrame {
         lg = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         panel = new javax.swing.JTabbedPane();
         User = new javax.swing.JPanel();
         add_to_table_user = new javax.swing.JButton();
@@ -69,7 +68,7 @@ public class admin_home extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         SAVE_db_user = new javax.swing.JButton();
         refresh = new javax.swing.JButton();
-        Clear_user = new javax.swing.JButton();
+        show_table = new javax.swing.JButton();
         edit_user = new javax.swing.JButton();
         delete_user = new javax.swing.JButton();
         update_save_user = new javax.swing.JButton();
@@ -77,8 +76,6 @@ public class admin_home extends javax.swing.JFrame {
         Player = new javax.swing.JPanel();
         memberplan = new javax.swing.JPanel();
         jButton12 = new javax.swing.JButton();
-        membertype = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
         matches = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         Coaches = new javax.swing.JPanel();
@@ -106,16 +103,17 @@ public class admin_home extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         edit_user1 = new javax.swing.JButton();
         delete_user1 = new javax.swing.JButton();
+        report = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
         privetcoaches = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         payment = new javax.swing.JPanel();
         jButton8 = new javax.swing.JButton();
-        report = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -137,15 +135,9 @@ public class admin_home extends javax.swing.JFrame {
         });
         jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
-        jButton2.setText("HOME");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
-
         panel.setBackground(new java.awt.Color(204, 255, 204));
+        panel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        panel.setFocusable(false);
         panel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         User.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -279,13 +271,13 @@ public class admin_home extends javax.swing.JFrame {
         });
         User.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 20, -1, -1));
 
-        Clear_user.setText("Show table");
-        Clear_user.addActionListener(new java.awt.event.ActionListener() {
+        show_table.setText("Show table");
+        show_table.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Clear_userActionPerformed(evt);
+                show_tableActionPerformed(evt);
             }
         });
-        User.add(Clear_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 390, -1, -1));
+        User.add(show_table, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 390, -1, -1));
 
         edit_user.setText("Edit");
         edit_user.addActionListener(new java.awt.event.ActionListener() {
@@ -354,27 +346,6 @@ public class admin_home extends javax.swing.JFrame {
         );
 
         panel.addTab("Members Plan", memberplan);
-
-        jButton9.setText("jButton5");
-
-        javax.swing.GroupLayout membertypeLayout = new javax.swing.GroupLayout(membertype);
-        membertype.setLayout(membertypeLayout);
-        membertypeLayout.setHorizontalGroup(
-            membertypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, membertypeLayout.createSequentialGroup()
-                .addContainerGap(1689, Short.MAX_VALUE)
-                .addComponent(jButton9)
-                .addGap(77, 77, 77))
-        );
-        membertypeLayout.setVerticalGroup(
-            membertypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, membertypeLayout.createSequentialGroup()
-                .addContainerGap(835, Short.MAX_VALUE)
-                .addComponent(jButton9)
-                .addGap(54, 54, 54))
-        );
-
-        panel.addTab("Member Type", membertype);
 
         jButton4.setText("jButton4");
 
@@ -529,6 +500,27 @@ public class admin_home extends javax.swing.JFrame {
 
         panel.addTab("Coaches", Coaches);
 
+        jButton7.setText("jButton5");
+
+        javax.swing.GroupLayout reportLayout = new javax.swing.GroupLayout(report);
+        report.setLayout(reportLayout);
+        reportLayout.setHorizontalGroup(
+            reportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, reportLayout.createSequentialGroup()
+                .addContainerGap(1257, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addGap(509, 509, 509))
+        );
+        reportLayout.setVerticalGroup(
+            reportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(reportLayout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addComponent(jButton7)
+                .addContainerGap(778, Short.MAX_VALUE))
+        );
+
+        panel.addTab("Report", report);
+
         jButton10.setText("jButton5");
 
         javax.swing.GroupLayout privetcoachesLayout = new javax.swing.GroupLayout(privetcoaches);
@@ -571,28 +563,15 @@ public class admin_home extends javax.swing.JFrame {
 
         panel.addTab("Payment", payment);
 
-        jButton7.setText("jButton5");
+        jPanel3.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1850, 950));
 
-        javax.swing.GroupLayout reportLayout = new javax.swing.GroupLayout(report);
-        report.setLayout(reportLayout);
-        reportLayout.setHorizontalGroup(
-            reportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, reportLayout.createSequentialGroup()
-                .addContainerGap(1257, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addGap(509, 509, 509))
-        );
-        reportLayout.setVerticalGroup(
-            reportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(reportLayout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addComponent(jButton7)
-                .addContainerGap(778, Short.MAX_VALUE))
-        );
-
-        panel.addTab("Report", report);
-
-        jPanel3.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 1850, 950));
+        jButton2.setText("HOME");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -603,8 +582,7 @@ public class admin_home extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1083, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -714,168 +692,11 @@ public class admin_home extends javax.swing.JFrame {
         System.gc();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void cmbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbActionPerformed
-
-    private void namet1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namet1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namet1ActionPerformed
-
-    private void add_to_table_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_to_table_userActionPerformed
-        try {
-            DefaultTableModel dtm = (DefaultTableModel) T7.getModel();
-            String name = namet1.getText();
-            String con = contactt3.getText();
-            String email = emailt2.getText();
-            String address = addresst4.getText();
-            String un = usernamet6.getText();
-            String pw = passwordt7.getText();
-            String repw = passwordt8.getText();
-            String states = cmb.getSelectedItem().toString();
-
-            //Vector v = new Vector();
-
-            if (name.equals("")) {
-                JOptionPane.showMessageDialog(rootPane, " Name Can't Be Empty", " Error", JOptionPane.ERROR_MESSAGE);
-            } else if (con.equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "Contact Number Can't Be Empty", "Error", JOptionPane.ERROR_MESSAGE);
-            } else if (email.equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "You should enter your emil", "Error", JOptionPane.ERROR_MESSAGE);
-            } else if (address.equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "Address Can't Be Empty", "Error", JOptionPane.ERROR_MESSAGE);
-            } else if (un.equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "User Name Can't Be Empty", "Error", JOptionPane.ERROR_MESSAGE);
-            } else if (pw.equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "Password Can't Be Empty", "Error", JOptionPane.ERROR_MESSAGE);
-            } else if (pw.equals(repw)) {
-
-                /*
-                 * v.add(name); v.add(email); v.add(con); v.add(address);
-                 * v.add(un); v.add(pw); v.add(repw); v.add(states);
-                 * dtm.addRow(v);
-                 */
-                String data[] = {name, con, email, address, un, pw, repw, states};
-                dtm.addRow(data);
-
-                namet1.setText("");
-                contactt3.setText("");
-                emailt2.setText("");
-                addresst4.setText("");
-                usernamet6.setText("");
-                passwordt7.setText("");
-                passwordt8.setText("");
-                cmb.setSelectedItem("");
-
-                user_data_list.clear();
-
-            } else {
-                JOptionPane.showMessageDialog(payment, "password does not match", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-   }//GEN-LAST:event_add_to_table_userActionPerformed
-
-    private void passwordt7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordt7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordt7ActionPerformed
-
-    private void passwordt8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordt8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordt8ActionPerformed
-
-    private void SAVE_db_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAVE_db_userActionPerformed
-        try {
-
-            DefaultTableModel dtm = (DefaultTableModel) T7.getModel();
-
-            for (int i = 0; i < dtm.getRowCount(); i++) {
-
-                String name = dtm.getValueAt(i, 0).toString();
-                String con = dtm.getValueAt(i, 1).toString();
-                String email = dtm.getValueAt(i, 2).toString();
-                String address = dtm.getValueAt(i, 3).toString();
-                String un = dtm.getValueAt(i, 4).toString();
-                String pw = dtm.getValueAt(i, 5).toString();
-                String repw = dtm.getValueAt(i, 6).toString();
-                String states = dtm.getValueAt(i, 7).toString();
-                //String id = login.username;
-                //String id = login.log_user;
-
-
-                Statement s = dbcon.dbConnection().createStatement();
-                s.executeUpdate("INSERT INTO user(Name,Contact_Number,Email,Address,User_Name,Password,Reenter_password,Status)VALUES('" + name + "','" + con + "','" + email + "','" + address + "','" + un + "','" + pw + "','" + repw + "','" + states + "')");
-
-            }
-            dtm.setRowCount(0);
-            JOptionPane.showMessageDialog(rootPane, "Sucessfully Saved to Database", "Sussess", JOptionPane.INFORMATION_MESSAGE);
-
-            user_data_list.clear();
-            load_to_table();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_SAVE_db_userActionPerformed
-
-    private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
+    private void delete_user1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_user1ActionPerformed
         try {
             DefaultTableModel dtm = (DefaultTableModel) T6.getModel();
-            dtm.setRowCount(0);
-
-            user_data_list.clear();
-            load_to_table();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_refreshActionPerformed
-
-    private void Clear_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Clear_userActionPerformed
-load_to_table();
-    }//GEN-LAST:event_Clear_userActionPerformed
-
-    private void edit_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_userActionPerformed
-        try {
-            DefaultTableModel dtm = (DefaultTableModel) T6.getModel();
-            
-            int i = T6.getSelectedRow();
-            uid = user_data_list.get(i);
-            
-            String name = dtm.getValueAt(i, 0).toString();
-            String con = dtm.getValueAt(i, 1).toString();
-            String email = dtm.getValueAt(i, 2).toString();
-            String address = dtm.getValueAt(i, 3).toString();
-            String un = dtm.getValueAt(i, 4).toString();
-            String pw = dtm.getValueAt(i, 5).toString();
-            String repw = dtm.getValueAt(i, 6).toString();
-            String states = dtm.getValueAt(i, 7).toString();
-
-            namet1.setText(name);
-            contactt3.setText(con);
-            emailt2.setText(email);
-            addresst4.setText(address);
-            usernamet6.setText(un);
-            passwordt7.setText(pw);
-            passwordt8.setText(repw);
-            cmb.setSelectedItem(states);
-
-            
-            user_data_list.clear();
-            load_to_table();
-            dtm.setRowCount(0);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_edit_userActionPerformed
-
-    private void delete_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_userActionPerformed
-        try {
-            DefaultTableModel dtm = (DefaultTableModel) T6.getModel();
-            int i = T6.getSelectedRow();
-            String uid = user_data_list.get(i);
+            int i = coacher_table_2.getSelectedRow();
+            String uid = coacher_data_list.get(i);
 
             Statement s = dbcon.dbConnection().createStatement();
 
@@ -883,12 +704,12 @@ load_to_table();
             int yn = JOptionPane.showConfirmDialog(rootPane, "Are You Sure ? ", "Warning", JOptionPane.YES_NO_OPTION);
 
             if (yn == 0) {
-                s.executeUpdate("DELETE FROM user WHERE User_Id='" + uid + "' ");
+                s.executeUpdate("DELETE FROM coach WHERE Coach_Id ='" + uid + "' ");
 
 
                 dtm.setRowCount(0);
-                user_data_list.clear();
-                load_to_table();//delete eka
+                coacher_data_list.clear();
+                load_to_table_coacher();//delete eka
 
             }
 
@@ -896,56 +717,116 @@ load_to_table();
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_delete_userActionPerformed
+    }//GEN-LAST:event_delete_user1ActionPerformed
 
-    private void update_save_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_save_userActionPerformed
+    private void edit_user1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_user1ActionPerformed
         try {
-            DefaultTableModel dtm = (DefaultTableModel) T6.getModel();
+            DefaultTableModel dtm = (DefaultTableModel) coacher_table_2.getModel();
 
-            String name = namet1.getText();
-            String con = contactt3.getText();
-            String email = emailt2.getText();
-            String address = addresst4.getText();
-            String un = usernamet6.getText();
-            String pw = passwordt7.getText();
-            String repw = passwordt8.getText();
-            String states = cmb.getSelectedItem().toString();
+            int i = coacher_table_2.getSelectedRow();
+            uid = coacher_data_list.get(i);
 
-            Statement s = dbcon.dbConnection().createStatement();
-            s.executeUpdate("UPDATE user set Name = '" + name + "',Contact_Number = '" + con + "',Email = '" + email + "',Address = '" + address + "',User_Name = '" + un + "',Password= '"
-                    + pw + "',Reenter_password='" + repw + "',Status='" + states + "' WHERE User_Id='" + User_Id + "' ");
-            
-            load_to_table();
+            String name = dtm.getValueAt(i, 0).toString();
+            String nic = dtm.getValueAt(i, 1).toString();
+            String address = dtm.getValueAt(i, 2).toString();
+            String contact = dtm.getValueAt(i, 3).toString();
+            String email = dtm.getValueAt(i, 4).toString();
+            String price = dtm.getValueAt(i, 5).toString();
 
-            dtm.setRowCount(0);
-            namet1.setText("");
-            contactt3.setText("");
-            emailt2.setText("");
-            addresst4.setText("");
-            usernamet6.setText("");
-            passwordt7.setText("");
-            passwordt8.setText("");
-            cmb.setSelectedItem("");
-            
-            //user_data_list.clear();
+            cname.setText(name);
+            cnic.setText(nic);
+            caddress.setText(address);
+            ccontact.setText(contact);
+            cemail.setText(email);
+            cprice.setText(price);
 
-            load_to_table();
+
+            coacher_data_list.clear();
+            load_to_table_coacher();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_update_save_userActionPerformed
+    }//GEN-LAST:event_edit_user1ActionPerformed
 
-    private void cnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cnameActionPerformed
+    private void update_save_coacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_save_coacherActionPerformed
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) coacher_table_2.getModel();
 
-    private void caddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caddressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_caddressActionPerformed
+            String name = cname.getText();
+            String nic = cnic.getText();
+            String address = caddress.getText();
+            String contact = ccontact.getText();
+            String email = cemail.getText();
+            String price = cprice.getText();
 
-    private void ccontactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccontactActionPerformed
+            Statement s = dbcon.dbConnection().createStatement();
+            s.executeUpdate("UPDATE Coach set Coach_name = '" + name + "',NIC = '" + nic + "',Coach_address = '" + address + "',Coach_Contact= '" + contact + "',Coach_email = '" + email + "',Privet_coach_price= '" + price + "' WHERE Coach_Id='" + uid + "' ");
+
+
+            cname.setText("");
+            cnic.setText("");
+            caddress.setText("");
+            ccontact.setText("");
+            cemail.setText("");
+            cprice.setText("");
+
+
+            load_to_table_coacher();
+
+            dtm.setRowCount(0);
+            coacher_data_list.clear();
+
+            load_to_table_coacher();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_update_save_coacherActionPerformed
+
+    private void SAVE_db_coacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAVE_db_coacherActionPerformed
+        try {
+            String id = login.User_Id;
+            DefaultTableModel dtm = (DefaultTableModel) coacher_table_1.getModel();
+
+            for (int i = 0; i < dtm.getRowCount(); i++) {
+
+                String name = dtm.getValueAt(i, 0).toString();
+                String nic = dtm.getValueAt(i, 1).toString();
+                String address = dtm.getValueAt(i, 2).toString();
+                String contact = dtm.getValueAt(i, 3).toString();
+                String email = dtm.getValueAt(i, 4).toString();
+                String price = dtm.getValueAt(i, 5).toString();
+
+                //String id = login.log_user;
+
+                //System.out.println(id);
+                Statement s = dbcon.dbConnection().createStatement();
+                s.executeUpdate("INSERT INTO coach(Coach_name,NIC,Coach_address,Coach_Contact,Coach_email,Privet_coach_price,User_User_Id) VALUES ('" + name + "','" + nic + "','" + address + "','" + contact + "','" + email + "','" + price + "','" + id + "')");
+
+            }
+            dtm.setRowCount(0);
+            JOptionPane.showMessageDialog(rootPane, "Sucessfully Saved to Database", "Sussess", JOptionPane.INFORMATION_MESSAGE);
+
+            coacher_data_list.clear();
+            load_to_table_coacher();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_SAVE_db_coacherActionPerformed
+
+    private void clear_coacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_coacherActionPerformed
+        cname.setText("");
+        cnic.setText("");
+        caddress.setText("");
+        ccontact.setText("");
+        cemail.setText("");
+        cprice.setText("");
+    }//GEN-LAST:event_clear_coacherActionPerformed
+
+    private void cnicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnicActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ccontactActionPerformed
+    }//GEN-LAST:event_cnicActionPerformed
 
     private void add_to_table_coacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_to_table_coacherActionPerformed
         try {
@@ -1010,123 +891,66 @@ load_to_table();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }//GEN-LAST:event_add_to_table_coacherActionPerformed
 
-    private void cnicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnicActionPerformed
+    private void ccontactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccontactActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cnicActionPerformed
+    }//GEN-LAST:event_ccontactActionPerformed
 
-    private void clear_coacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_coacherActionPerformed
-        cname.setText("");
-        cnic.setText("");
-        caddress.setText("");
-        ccontact.setText("");
-        cemail.setText("");
-        cprice.setText("");
-    }//GEN-LAST:event_clear_coacherActionPerformed
+    private void caddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_caddressActionPerformed
 
-    private void SAVE_db_coacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAVE_db_coacherActionPerformed
-        try {
-            String id = login.User_Id;
-            DefaultTableModel dtm = (DefaultTableModel) coacher_table_1.getModel();
+    private void cnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cnameActionPerformed
 
-            for (int i = 0; i < dtm.getRowCount(); i++) {
+    private void Clear_user1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Clear_user1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Clear_user1ActionPerformed
 
-                String name = dtm.getValueAt(i, 0).toString();
-                String nic = dtm.getValueAt(i, 1).toString();
-                String address = dtm.getValueAt(i, 2).toString();
-                String contact = dtm.getValueAt(i, 3).toString();
-                String email = dtm.getValueAt(i, 4).toString();
-                String price = dtm.getValueAt(i, 5).toString();
-
-                //String id = login.log_user;
-
-                //System.out.println(id);
-                Statement s = dbcon.dbConnection().createStatement();
-                s.executeUpdate("INSERT INTO coach(Coach_name,NIC,Coach_address,Coach_Contact,Coach_email,Privet_coach_price,User_User_Id) VALUES ('" + name + "','" + nic + "','" + address + "','" + contact + "','" + email + "','" + price + "','" + id + "')");
-
-            }
-            dtm.setRowCount(0);
-            JOptionPane.showMessageDialog(rootPane, "Sucessfully Saved to Database", "Sussess", JOptionPane.INFORMATION_MESSAGE);
-
-            coacher_data_list.clear();
-            load_to_table_coacher();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_SAVE_db_coacherActionPerformed
-
-    private void update_save_coacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_save_coacherActionPerformed
-        try {
-            DefaultTableModel dtm = (DefaultTableModel) coacher_table_2.getModel();
-
-            String name = cname.getText();
-            String nic = cnic.getText();
-            String address = caddress.getText();
-            String contact = ccontact.getText();
-            String email = cemail.getText();
-            String price = cprice.getText();
-
-            Statement s = dbcon.dbConnection().createStatement();
-            s.executeUpdate("UPDATE Coach set Coach_name = '" + name + "',NIC = '" + nic + "',Coach_address = '" + address + "',Coach_Contact= '" + contact + "',Coach_email = '" + email + "',Privet_coach_price= '" + price + "' WHERE Coach_Id='" + uid + "' ");
-
-
-            cname.setText("");
-            cnic.setText("");
-            caddress.setText("");
-            ccontact.setText("");
-            cemail.setText("");
-            cprice.setText("");
-
-
-            load_to_table_coacher();
-
-            dtm.setRowCount(0);
-            coacher_data_list.clear();
-
-            load_to_table_coacher();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_update_save_coacherActionPerformed
-
-    private void edit_user1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_user1ActionPerformed
-        try {
-            DefaultTableModel dtm = (DefaultTableModel) coacher_table_2.getModel();
-
-            int i = coacher_table_2.getSelectedRow();
-            uid = coacher_data_list.get(i);
-
-            String name = dtm.getValueAt(i, 0).toString();
-            String nic = dtm.getValueAt(i, 1).toString();
-            String address = dtm.getValueAt(i, 2).toString();
-            String contact = dtm.getValueAt(i, 3).toString();
-            String email = dtm.getValueAt(i, 4).toString();
-            String price = dtm.getValueAt(i, 5).toString();
-
-            cname.setText(name);
-            cnic.setText(nic);
-            caddress.setText(address);
-            ccontact.setText(contact);
-            cemail.setText(email);
-            cprice.setText(price);
-
-
-            coacher_data_list.clear();
-            load_to_table_coacher();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_edit_user1ActionPerformed
-
-    private void delete_user1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_user1ActionPerformed
+    private void update_save_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_save_userActionPerformed
         try {
             DefaultTableModel dtm = (DefaultTableModel) T6.getModel();
-            int i = coacher_table_2.getSelectedRow();
-            String uid = coacher_data_list.get(i);
+
+            String name = namet1.getText();
+            String con = contactt3.getText();
+            String email = emailt2.getText();
+            String address = addresst4.getText();
+            String un = usernamet6.getText();
+            String pw = passwordt7.getText();
+            String repw = passwordt8.getText();
+            String states = cmb.getSelectedItem().toString();
+
+            Statement s = dbcon.dbConnection().createStatement();
+            s.executeUpdate("UPDATE user set Name = '" + name + "',Contact_Number = '" + con + "',Email = '" + email + "',Address = '" + address + "',User_Name = '" + un + "',Password= '"
+                    + pw + "',Reenter_password='" + repw + "',Status='" + states + "' WHERE User_Id='" + User_Id + "' ");
+
+            load_to_table();
+
+            dtm.setRowCount(0);
+            namet1.setText("");
+            contactt3.setText("");
+            emailt2.setText("");
+            addresst4.setText("");
+            usernamet6.setText("");
+            passwordt7.setText("");
+            passwordt8.setText("");
+            cmb.setSelectedItem("");
+
+            //user_data_list.clear();
+
+            load_to_table();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_update_save_userActionPerformed
+
+    private void delete_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_userActionPerformed
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) T6.getModel();
+            int i = T6.getSelectedRow();
+            String uid = user_data_list.get(i);
 
             Statement s = dbcon.dbConnection().createStatement();
 
@@ -1134,12 +958,12 @@ load_to_table();
             int yn = JOptionPane.showConfirmDialog(rootPane, "Are You Sure ? ", "Warning", JOptionPane.YES_NO_OPTION);
 
             if (yn == 0) {
-                s.executeUpdate("DELETE FROM coach WHERE Coach_Id ='" + uid + "' ");
+                s.executeUpdate("DELETE FROM user WHERE User_Id='" + uid + "' ");
 
 
                 dtm.setRowCount(0);
-                coacher_data_list.clear();
-                load_to_table_coacher();//delete eka
+                user_data_list.clear();
+                load_to_table();//delete eka
 
             }
 
@@ -1147,11 +971,162 @@ load_to_table();
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_delete_user1ActionPerformed
+    }//GEN-LAST:event_delete_userActionPerformed
 
-    private void Clear_user1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Clear_user1ActionPerformed
+    private void edit_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_userActionPerformed
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) T6.getModel();
+
+            int i = T6.getSelectedRow();
+            uid = user_data_list.get(i);
+
+            String name = dtm.getValueAt(i, 0).toString();
+            String con = dtm.getValueAt(i, 1).toString();
+            String email = dtm.getValueAt(i, 2).toString();
+            String address = dtm.getValueAt(i, 3).toString();
+            String un = dtm.getValueAt(i, 4).toString();
+            String pw = dtm.getValueAt(i, 5).toString();
+            String repw = dtm.getValueAt(i, 6).toString();
+            String states = dtm.getValueAt(i, 7).toString();
+
+            namet1.setText(name);
+            contactt3.setText(con);
+            emailt2.setText(email);
+            addresst4.setText(address);
+            usernamet6.setText(un);
+            passwordt7.setText(pw);
+            passwordt8.setText(repw);
+            cmb.setSelectedItem(states);
+
+
+            user_data_list.clear();
+            load_to_table();
+            dtm.setRowCount(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_edit_userActionPerformed
+
+    private void show_tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_tableActionPerformed
+        load_to_table();
+    }//GEN-LAST:event_show_tableActionPerformed
+
+    private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) T6.getModel();
+            dtm.setRowCount(0);
+
+            user_data_list.clear();
+            load_to_table();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_refreshActionPerformed
+
+    private void SAVE_db_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAVE_db_userActionPerformed
+        try {
+
+            DefaultTableModel dtm = (DefaultTableModel) T7.getModel();
+
+            for (int i = 0; i < dtm.getRowCount(); i++) {
+
+                String name = dtm.getValueAt(i, 0).toString();
+                String con = dtm.getValueAt(i, 1).toString();
+                String email = dtm.getValueAt(i, 2).toString();
+                String address = dtm.getValueAt(i, 3).toString();
+                String un = dtm.getValueAt(i, 4).toString();
+                String pw = dtm.getValueAt(i, 5).toString();
+                String repw = dtm.getValueAt(i, 6).toString();
+                String states = dtm.getValueAt(i, 7).toString();
+                //String id = login.username;
+                //String id = login.log_user;
+
+                Statement s = dbcon.dbConnection().createStatement();
+                s.executeUpdate("INSERT INTO user(Name,Contact_Number,Email,Address,User_Name,Password,Reenter_password,Status)VALUES('" + name + "','" + con + "','" + email + "','" + address + "','" + un + "','" + pw + "','" + repw + "','" + states + "')");
+
+            }
+            dtm.setRowCount(0);
+            JOptionPane.showMessageDialog(rootPane, "Sucessfully Saved to Database", "Sussess", JOptionPane.INFORMATION_MESSAGE);
+
+            user_data_list.clear();
+            load_to_table();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_SAVE_db_userActionPerformed
+
+    private void passwordt7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordt7ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Clear_user1ActionPerformed
+    }//GEN-LAST:event_passwordt7ActionPerformed
+
+    private void passwordt8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordt8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordt8ActionPerformed
+
+    private void cmbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbActionPerformed
+
+    private void namet1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namet1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_namet1ActionPerformed
+
+    private void add_to_table_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_to_table_userActionPerformed
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) T7.getModel();
+            String name = namet1.getText();
+            String con = contactt3.getText();
+            String email = emailt2.getText();
+            String address = addresst4.getText();
+            String un = usernamet6.getText();
+            String pw = passwordt7.getText();
+            String repw = passwordt8.getText();
+            String states = cmb.getSelectedItem().toString();
+
+            //Vector v = new Vector();
+
+            if (name.equals("")) {
+                JOptionPane.showMessageDialog(rootPane, " Name Can't Be Empty", " Error", JOptionPane.ERROR_MESSAGE);
+            } else if (con.equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Contact Number Can't Be Empty", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (email.equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "You should enter your emil", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (address.equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Address Can't Be Empty", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (un.equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "User Name Can't Be Empty", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (pw.equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Password Can't Be Empty", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (pw.equals(repw)) {
+
+                /*
+                 * v.add(name); v.add(email); v.add(con); v.add(address);
+                 * v.add(un); v.add(pw); v.add(repw); v.add(states);
+                 * dtm.addRow(v);
+                 */
+                String data[] = {name, con, email, address, un, pw, repw, states};
+                dtm.addRow(data);
+
+                namet1.setText("");
+                contactt3.setText("");
+                emailt2.setText("");
+                addresst4.setText("");
+                usernamet6.setText("");
+                passwordt7.setText("");
+                passwordt8.setText("");
+                cmb.setSelectedItem("");
+
+                user_data_list.clear();
+
+            } else {
+                JOptionPane.showMessageDialog(payment, "password does not match", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_add_to_table_userActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1195,7 +1170,6 @@ load_to_table();
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Clear_user;
     private javax.swing.JButton Clear_user1;
     private javax.swing.JPanel Coaches;
     private javax.swing.JPanel Player;
@@ -1230,7 +1204,6 @@ load_to_table();
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1259,7 +1232,6 @@ load_to_table();
     private javax.swing.JLabel lg;
     private javax.swing.JPanel matches;
     private javax.swing.JPanel memberplan;
-    private javax.swing.JPanel membertype;
     private javax.swing.JTextField namet1;
     private javax.swing.JTabbedPane panel;
     private javax.swing.JPasswordField passwordt7;
@@ -1268,6 +1240,7 @@ load_to_table();
     private javax.swing.JPanel privetcoaches;
     private javax.swing.JButton refresh;
     private javax.swing.JPanel report;
+    private javax.swing.JButton show_table;
     private javax.swing.JButton update_save_coacher;
     private javax.swing.JButton update_save_user;
     private javax.swing.JTextField usernamet6;

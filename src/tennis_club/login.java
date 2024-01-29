@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ASUS         
+ * @author ASUS
  */
 public class login extends javax.swing.JFrame {
 
@@ -33,6 +33,7 @@ public class login extends javax.swing.JFrame {
     private void initComponents() {
 
         jInternalFrame1 = new javax.swing.JInternalFrame();
+        jTextField1 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         un = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -41,7 +42,9 @@ public class login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         pw = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -56,11 +59,16 @@ public class login extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        jTextField1.setText("jTextField1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(un, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 420, 220, 40));
+
+        un.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(un, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 320, 230, 40));
 
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +76,7 @@ public class login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 600, -1, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 500, -1, -1));
 
         jButton2.setText("Clear");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -76,34 +84,40 @@ public class login extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 600, -1, -1));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 500, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("User Name ");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 380, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, 130, 40));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Tekton Pro Cond", 0, 90)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Login");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 230, 160, 160));
+        jLabel1.setText("Madzoo Success Tennis");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, -10, 820, 160));
 
+        pw.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         pw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pwActionPerformed(evt);
             }
         });
-        jPanel2.add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 510, 230, 40));
+        jPanel2.add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 230, 40));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Password");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 480, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 390, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel6.setText("Login");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, 100, 70));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tennis_club/Artboard 1.jpg"))); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -90, 1920, 1260));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tennis_club/Home.jpg"))); // NOI18N
+        jLabel4.setText("defgew");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 1330, 730));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 310, 470));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1910, 1140));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1300, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -119,7 +133,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try { 
+        try {
             //get the user inputs
             String UN = un.getText();
             String PW = pw.getText();
@@ -151,6 +165,7 @@ public class login extends javax.swing.JFrame {
 
                 JOptionPane.showMessageDialog(rootPane, "Plaese enter login details", "Login Error", JOptionPane.ERROR_MESSAGE);
             } else {
+
                 if (UN.equals(db_user) && PW.equals(db_password)) {
                     if (statement.equals("1")) {
                         admin_home ah = new admin_home();
@@ -164,6 +179,7 @@ public class login extends javax.swing.JFrame {
                         tb.setVisible(true);
                         this.dispose();
                         System.gc();
+                        JOptionPane.showMessageDialog(rootPane, "Success Login", "Success", JOptionPane.INFORMATION_MESSAGE);
                     }
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "Plaese enter valid login details", "Login Error", JOptionPane.ERROR_MESSAGE);
@@ -173,7 +189,8 @@ public class login extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-public static  String db_user = "";
+    public static String db_user = "";
+
     /**
      * @param args the command line arguments
      */
@@ -223,7 +240,10 @@ public static  String db_user = "";
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPasswordField pw;
     private javax.swing.JTextField un;
     // End of variables declaration//GEN-END:variables

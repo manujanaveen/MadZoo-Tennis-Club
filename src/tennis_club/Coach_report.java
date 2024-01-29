@@ -4,6 +4,12 @@
  */
 package tennis_club;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
+import sun.nio.ch.DefaultAsynchronousChannelProvider;
+
 /**
  *
  * @author ASUS
@@ -16,8 +22,29 @@ public class Coach_report extends javax.swing.JFrame {
     public Coach_report() {
         initComponents();
         lg.setText(login.User_Id);
+        mathdetail();
     }
-
+    
+    void mathdetail(){
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) matchdetail.getModel();
+            dtm.setRowCount(0);
+            Statement s = dbcon.dbConnection().createStatement();
+            ResultSet rs = s.executeQuery("SELECT Match_Id,Date FROM madzootennisclub.match WHERE Coach_Coach_Id == '"+Reprot.getcoachreport_id+"'");
+             while (rs.next()) {                
+                Vector v = new Vector();
+                String id = rs.getString("Match_Id");
+                String date = rs.getString("Date");
+                
+                v.add(id);
+                v.add(date);
+                dtm.addRow(v);
+            }
+            System.out.println(Reprot.getcoachreport_id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,7 +60,12 @@ public class Coach_report extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         lg = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        total_matches = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        matchdetail = new javax.swing.JTable();
+        totalpay = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,10 +93,33 @@ public class Coach_report extends javax.swing.JFrame {
 
         lg.setBackground(new java.awt.Color(255, 255, 204));
         lg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(lg, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 280, 50));
+        jPanel1.add(lg, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 280, 50));
 
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 190, 60));
+        total_matches.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jPanel1.add(total_matches, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 290, 40));
+
+        matchdetail.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Math ID", "Date"
+            }
+        ));
+        jScrollPane1.setViewportView(matchdetail);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 730, 340));
+
+        totalpay.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jPanel1.add(totalpay, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 560, 250, 40));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setText("Total Payment");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setText("Total Number of matches");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,8 +195,13 @@ public class Coach_report extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private com.toedter.calendar.JDateChooserBeanInfo jDateChooserBeanInfo1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lg;
+    private javax.swing.JTable matchdetail;
+    private javax.swing.JLabel total_matches;
+    private javax.swing.JLabel totalpay;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import sun.net.www.content.audio.x_aiff;
 
@@ -23,7 +24,7 @@ public class Players extends javax.swing.JFrame {
      */
     public Players() {
         initComponents();
-        //load_to_cmd();
+        load_to_cmd();
         lg.setText(login.db_user);
     }
 
@@ -36,6 +37,7 @@ public class Players extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        plan = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lg = new javax.swing.JLabel();
@@ -52,26 +54,31 @@ public class Players extends javax.swing.JFrame {
         l6 = new javax.swing.JLabel();
         l7 = new javax.swing.JLabel();
         l8 = new javax.swing.JLabel();
-        t5 = new javax.swing.JTextField();
+        p = new javax.swing.JTextField();
         t7 = new javax.swing.JTextField();
         t8 = new javax.swing.JTextField();
         Save = new javax.swing.JButton();
-        cmb_plan = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         playerT = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         t6 = new javax.swing.JTextField();
         l9 = new javax.swing.JLabel();
         clear_coacher = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        t9 = new javax.swing.JTextField();
+        Save1 = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Player");
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Add New Player");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 290, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 80, 290, 50));
 
         lg.setBackground(new java.awt.Color(255, 255, 204));
         lg.setText(" ");
@@ -87,69 +94,61 @@ public class Players extends javax.swing.JFrame {
         jPanel1.add(Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
         l1.setText("NIC");
-        jPanel1.add(l1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
+        jPanel1.add(l1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 190, -1, -1));
 
         l2.setText("Age");
-        jPanel1.add(l2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
+        jPanel1.add(l2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, -1, -1));
 
         l3.setText("Address");
-        jPanel1.add(l3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
+        jPanel1.add(l3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, -1, -1));
 
-        l4.setText("Contact_Number");
-        jPanel1.add(l4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
+        l4.setText("Contact Number");
+        jPanel1.add(l4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 280, -1, -1));
 
         t1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t1ActionPerformed(evt);
             }
         });
-        jPanel1.add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 418, -1));
-        jPanel1.add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 418, -1));
+        jPanel1.add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, 418, -1));
+        jPanel1.add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 180, 418, -1));
 
         t3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t3ActionPerformed(evt);
             }
         });
-        jPanel1.add(t3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 418, -1));
-        jPanel1.add(t4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 418, -1));
+        jPanel1.add(t3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 240, 418, -1));
+        jPanel1.add(t4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 270, 418, -1));
 
         l5.setText("Email");
-        jPanel1.add(l5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, -1, -1));
+        jPanel1.add(l5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, -1, -1));
 
         l6.setText("Coaching plan");
-        jPanel1.add(l6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
+        jPanel1.add(l6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, -1, -1));
 
         l7.setText("Weight");
-        jPanel1.add(l7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
+        jPanel1.add(l7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, -1, -1));
 
         l8.setText("Coaching Hours");
-        jPanel1.add(l8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
+        jPanel1.add(l8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 400, -1, -1));
 
-        t5.addActionListener(new java.awt.event.ActionListener() {
+        p.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t5ActionPerformed(evt);
+                pActionPerformed(evt);
             }
         });
-        jPanel1.add(t5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 418, -1));
-        jPanel1.add(t7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, 418, -1));
-        jPanel1.add(t8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 418, -1));
+        jPanel1.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 330, 418, -1));
+        jPanel1.add(t7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 360, 418, -1));
+        jPanel1.add(t8, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 390, 418, -1));
 
-        Save.setText("Save");
+        Save.setText("Update");
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
             }
         });
-        jPanel1.add(Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 420, -1, -1));
-
-        cmb_plan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Annual", "6 Month ", "3 Month", "1 Month" }));
-        cmb_plan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_planActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cmb_plan, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 110, -1));
+        jPanel1.add(Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(1610, 890, -1, -1));
 
         playerT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -161,7 +160,7 @@ public class Players extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(playerT);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 480, 1720, 370));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 1720, 370));
 
         jButton1.setText("Plans");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -169,11 +168,11 @@ public class Players extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, 150, -1));
-        jPanel1.add(t6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 418, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 330, 150, -1));
+        jPanel1.add(t6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 210, 418, -1));
 
         l9.setText("Name");
-        jPanel1.add(l9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, -1));
+        jPanel1.add(l9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, -1));
 
         clear_coacher.setText("Clear");
         clear_coacher.addActionListener(new java.awt.event.ActionListener() {
@@ -181,20 +180,48 @@ public class Players extends javax.swing.JFrame {
                 clear_coacherActionPerformed(evt);
             }
         });
-        jPanel1.add(clear_coacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 420, -1, -1));
+        jPanel1.add(clear_coacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 430, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tekton Pro", 1, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("Madzoo Success Tennis");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 500, 90));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tennis_club/Home.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 570, 510));
+
+        t9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t9ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(t9, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 300, 418, -1));
+
+        Save1.setText("Save");
+        Save1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Save1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 430, -1, -1));
+
+        delete.setText("Delete");
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1530, 890, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1839, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1920, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1650, Short.MAX_VALUE)
         );
 
         pack();
@@ -205,11 +232,16 @@ public class Players extends javax.swing.JFrame {
 
     public void load_to_cmd() {
         try {
+            
+            DefaultTableModel dtm = (DefaultTableModel) playerT.getModel();
+            dtm.setRowCount(0);
+            
             Statement s = dbcon.dbConnection().createStatement();
             ResultSet rs = s.executeQuery("SELECT *FROM Player");
             
             while (rs.next()) {
-                 Vector v = new Vector();// example vector kiynne malu dalak wage ekak.muhude inna malu alla ganna dana malu dalak wag
+                 Vector v = new Vector();// example vector kiynne malu dalak wage ekak.muhude inna malu alla ganna dana malu dalak wagw
+                String z = rs.getString("Player_ID");
                 String a = rs.getString("Player_Name");
                 String i = rs.getString("Player_nic");
                 String b = rs.getString("Player_Age");
@@ -220,7 +252,7 @@ public class Players extends javax.swing.JFrame {
                 String g = rs.getString("Weight");
                 String h = rs.getString("Coaching_hours");
                 
-                String id = rs.getString(select_id);
+                player_data_list.add(z);
                 
                 v.add(a);
                 v.add(i);
@@ -231,12 +263,11 @@ public class Players extends javax.swing.JFrame {
                 v.add(f);
                 v.add(g);
                 v.add(h);
-                v.add(id);
-                
-                
+              //  v.add(id);
+                dtm.addRow(v);
 
-                System.out.println(a);
-                cmb_plan.setModel(new DefaultComboBoxModel(v)); //ape drop down eka ape bottuwe malu dana box eka wage
+                //System.out.println(a);
+                //p.setModel(new DefaultComboBoxModel(v)); //ape drop down eka ape bottuwe malu dana box eka wage
             }
             
 
@@ -256,64 +287,13 @@ public class Players extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_t1ActionPerformed
 
-    private void t5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t5ActionPerformed
+    private void pActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_t5ActionPerformed
+    }//GEN-LAST:event_pActionPerformed
 
     private void t3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t3ActionPerformed
-
-    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        try {
-
-            /*
-             * int id = login.log_id; DefaultTableModel dtm =
-             * (DefaultTableModel) playerT.getModel();4
-             *
-             * for (int i = 0; 1 < dtm.getRowCount(); i++) {
-             *
-             * String name = dtm.getValueAt(i, 0).toString(); String age =
-             * dtm.getValueAt(i, 1).toString(); String address =
-             * dtm.getValueAt(i, 2).toString(); String con = dtm.getValueAt(i,
-             * 3).toString(); String email = dtm.getValueAt(i, 4).toString();
-             * String coaching_plan = dtm.getValueAt(i, 5).toString(); String
-             * weight = dtm.getValueAt(i, 6).toString(); String coaching_hours =
-             * dtm.getValueAt(i, 7).toString();
-             */
-
-            String a = t1.getText();
-            String i = t6.getText();
-            String b = t2.getText();
-            String c = t3.getText();
-            String d = t4.getText();
-            String e = t5.getText();
-            String f = cmb_plan.getSelectedItem().toString();
-            String g = t7.getText();
-            String h = t8.getText();
-            String id = login.User_Id;
-            // String idi =Membership_plan.memberplanid;
-            //String idi = cmb_plan.getSelectedItem().toString();
-
-            //System.out.println(id);
-            //System.out.println(idi);
-            Statement s = dbcon.dbConnection().createStatement();
-            s.executeUpdate("INSERT INTO player(Player_Name,Player_nic,Player_Age,Player_Address,Player_Contact_Number,Player_Email,Coaching_plan,Weight,Coaching_hours,User_User_Id,)VALUES"
-                    + "('" + a + "','" + i + "','" + b + "','" + c + "','" + d + "','" + e + "','" + f + "','" + g + "','" + h + "','" + id + "')");
-
-
-            //player_data_list();
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }//GEN-LAST:event_SaveActionPerformed
-
-    private void cmb_planActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_planActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmb_planActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Membership_plan mp = new Membership_plan();
@@ -328,12 +308,84 @@ public class Players extends javax.swing.JFrame {
         t6.setText("");
         t3.setText("");
         t4.setText("");
-        t5.setText("");
-        cmb_plan.setSelectedItem("");
+        t9.setText("");
+        p.setText("");
         t7.setText("");
         t8.setText("");
 
     }//GEN-LAST:event_clear_coacherActionPerformed
+
+    private void t9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_t9ActionPerformed
+
+    private void Save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save1ActionPerformed
+       try {
+           
+            String name = t1.getText();
+            String NIC = t2.getText();                                               //int NIC = Integer.parseInt(t2.getText());   // 
+            String age = t6.getText();
+            String address = t3.getText();
+            String contactnumber = t4.getText();
+            String email = t9.getText();
+            String plan =  p.getText();
+            int weight = Integer.parseInt(t7.getText());
+            int hour = Integer.parseInt(t8.getText());
+            uid = login.User_Id;
+            
+            //System.out.println(plan);
+            Statement s = dbcon.dbConnection().createStatement();
+            s.executeUpdate("INSERT INTO player VALUES ('"+NIC+"','" + name + "'," + NIC + "," + age + ",'" + address + "'," + contactnumber + ",'" + email + "','" + plan + "'," + weight + "," + hour + ",'"+uid+"')");
+                  
+                t1.setText("");
+                t2.setText("");
+                t6.setText("");
+                t3.setText("");
+                t4.setText("");
+                t9.setText("");
+                p.setText("");
+                t7.setText("");
+                t8.setText("");
+            
+            
+            player_data_list.clear();
+            JOptionPane.showMessageDialog(rootPane, "Sucessfully Saved to Database", "Sussess", JOptionPane.INFORMATION_MESSAGE);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_Save1ActionPerformed
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+        
+    }//GEN-LAST:event_SaveActionPerformed
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        try {
+            int i = playerT.getSelectedRow();
+            String id = player_data_list.get(i);
+            System.out.println(id);
+
+            Statement s = dbcon.dbConnection().createStatement();
+            DefaultTableModel dtm = (DefaultTableModel) playerT.getModel();
+            int row = playerT.getSelectedRow();
+
+            int yn = JOptionPane.showConfirmDialog(rootPane, "Are You Sure", "Warning", JOptionPane.YES_NO_OPTION);
+
+            if (yn == 0) {
+                s.executeUpdate("DELETE FROM player WHERE Player_Id='" + uid + "'");
+
+                dtm.removeRow(row);
+                dtm.setRowCount(0);
+                load_to_cmd();
+            }
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+    }//GEN-LAST:event_deleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -379,10 +431,13 @@ public class Players extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Home;
     private javax.swing.JButton Save;
+    private javax.swing.JButton Save1;
     private javax.swing.JButton clear_coacher;
-    private javax.swing.JComboBox cmb_plan;
+    private javax.swing.JButton delete;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel l1;
@@ -395,14 +450,16 @@ public class Players extends javax.swing.JFrame {
     private javax.swing.JLabel l8;
     private javax.swing.JLabel l9;
     private javax.swing.JLabel lg;
+    private javax.swing.JTextField p;
+    private javax.swing.ButtonGroup plan;
     private javax.swing.JTable playerT;
     private javax.swing.JTextField t1;
     private javax.swing.JTextField t2;
     private javax.swing.JTextField t3;
     private javax.swing.JTextField t4;
-    private javax.swing.JTextField t5;
     private javax.swing.JTextField t6;
     private javax.swing.JTextField t7;
     private javax.swing.JTextField t8;
+    private javax.swing.JTextField t9;
     // End of variables declaration//GEN-END:variables
 }
